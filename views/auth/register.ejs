@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+    <div class="login-page">
+
+        <div class="form">
+            <div class="toggle-form">
+                <button id="user-toggle">User Register</button>
+                <button id="company-toggle">Company Register</button>
+            </div>
+            <form class="login-form user-form" method="post" action="/user-register">
+                <h3>User Register</h3>
+                <input type="text" name="name" placeholder="name" />
+                <input type="email" name="email" placeholder="email" />
+                <input type="password" name="password" placeholder="password" />
+                <input type="password" name="confirm_password" placeholder="confirm password" />
+                <button type="submit">Register</button>
+                <% if(errorMessage) { %>
+                    <p class="error-message">
+                        <%= errorMessage %>
+                    </p>
+                    <% } %>
+                        <p class="message">Already registered? <a href="/login">Sign In</a></p>
+            </form>
+            <form class="login-form company-form hide" method="post" action="/company-register">
+                <h3>Company Register</h3>
+                <input type="text" name="name" placeholder="company name" />
+                <input type="email" name="email" placeholder="company email" />
+                <input type="password" name="password" placeholder="password" />
+                <input type="password" name="confirm_password" placeholder="confirm password" />
+                <button type="submit">Register</button>
+                <% if(errorMessage) { %>
+                    <p class="error-message">
+                        <%= errorMessage %>
+                    </p>
+                    <% } %>
+                        <p class="message">Already registered? <a href="/login">Sign In</a></p>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('user-toggle').classList.add('active');
+
+        document.getElementById('user-toggle').addEventListener('click', function () {
+            document.querySelector('.user-form').classList.remove('hide');
+            document.querySelector('.company-form').classList.add('hide');
+            document.getElementById('user-toggle').classList.add('active');
+            document.getElementById('company-toggle').classList.remove('active');
+        });
+
+        document.getElementById('company-toggle').addEventListener('click', function () {
+            document.querySelector('.user-form').classList.add('hide');
+            document.querySelector('.company-form').classList.remove('hide');
+            document.getElementById('company-toggle').classList.add('active');
+            document.getElementById('user-toggle').classList.remove('active');
+        });
+
+
+    </script>
+</body>
+
+</html>

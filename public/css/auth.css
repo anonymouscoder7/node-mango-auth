@@ -1,0 +1,91 @@
+/* login.css */
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    max-width: 300px;
+    margin: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.message {
+    text-align: center;
+}
+
+.message a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
+
+.toggle-form{
+    margin-left: 28px;
+}
+.toggle-form button {
+    background-color: rgb(166, 213, 187);
+    color: #00070c; /* Default text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.toggle-form button.active {
+    background-color: #007bff; /* Active background color */
+    color: #fff; /* Active text color */
+}
+
+.toggle-form button:hover:not(.active) {
+    background-color: #f8f9fa; /* Hover color for inactive buttons */
+}
